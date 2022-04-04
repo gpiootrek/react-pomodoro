@@ -1,0 +1,15 @@
+.clock {
+    width: 400px;
+    height: 400px;
+    border: 32px solid #D62828;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    font-size: 5rem;
+    color: #D62828;
+    font-weight: 700;
+}
