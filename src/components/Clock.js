@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./Clock.css";
+import TimeInput from "./TimeInput";
 
-const Clock = ({ isActive, time, handleTimeUpdate, handleEndOfSession }) => {
+const Clock = ({
+  isActive,
+  isEditingTime,
+  time,
+  handleTimeUpdate,
+  handleEndOfSession,
+  handleEditingTime,
+}) => {
   const [timer, setTimer] = useState(null);
 
   const startTimer = (time) => {
@@ -26,12 +34,17 @@ const Clock = ({ isActive, time, handleTimeUpdate, handleEndOfSession }) => {
 
   return (
     <div className="clock">
-      <span className="timer">
-        {Math.trunc(time / 1000 / 60)}:
-        {(time / 1000) % 60 < 10
-          ? `0${(time / 1000) % 60}`
-          : (time / 1000) % 60}
-      </span>
+      {/* TODO switch between span and input (on click) to change given time */}
+      {!isActive && isEditingTime ? (
+        <TimeInput />
+      ) : (
+        <span className="timer" onClick={handleEditingTime}>
+          {Math.trunc(time / 1000 / 60)}:
+          {(time / 1000) % 60 < 10
+            ? `0${(time / 1000) % 60}`
+            : (time / 1000) % 60}
+        </span>
+      )}
     </div>
   );
 };

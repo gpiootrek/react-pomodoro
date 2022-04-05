@@ -1,0 +1,32 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.clock__edit {
+    display: flex;
+}
+
+.clock__input {
+  font-size: 5rem;
+  color: #d62828;
+  font-weight: 700;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+.clock__input--minutes {
+    text-align: end;
+}
+
+.clock__colon {
+  font-size: 5rem;
+  color: #d62828;
+  font-weight: 700;
+}

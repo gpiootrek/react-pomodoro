@@ -9,6 +9,7 @@ const BASIC_TIME = 0.1 * 60 * 1000;
 
 const App = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isEditingTime, setIsEditingTime] = useState(false);
   const [time, setTime] = useState(BASIC_TIME);
   const [sessions, setSessions] = useState([]);
   const [currentNotes, setCurrentNotes] = useState("");
@@ -26,10 +27,9 @@ const App = () => {
 
   const handleNotesEdit = (text) => {
     setCurrentNotes(text);
-  }
+  };
 
   const handleEndOfSession = () => {
-
     setSessions((prev) => [
       ...prev,
       {
@@ -53,6 +53,10 @@ const App = () => {
     setIsEditorOpen((prev) => !prev);
   };
 
+  const handleEditingTime = () => {
+    setIsEditingTime((prev) => !prev);
+  };
+
   return (
     <Fragment>
       <NotesEditor
@@ -64,9 +68,11 @@ const App = () => {
       <div className="container">
         <Clock
           isActive={isActive}
+          isEditingTime={isEditingTime}
           time={time}
           handleTimeUpdate={handleTimeUpdate}
           handleEndOfSession={handleEndOfSession}
+          handleEditingTime={handleEditingTime}
         />
         <Menu
           isActive={isActive}
