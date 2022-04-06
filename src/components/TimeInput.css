@@ -1,7 +1,7 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0; 
+  margin: 0;
 }
 
 input[type="number"] {
@@ -9,12 +9,20 @@ input[type="number"] {
 }
 
 .clock__edit {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock__edit__form {
+  display: flex;
+  margin-top: 40px;
 }
 
 .clock__input {
   font-size: 5rem;
-  color: #d62828;
+  color: #fff;
   font-weight: 700;
   background: transparent;
   outline: none;
@@ -22,11 +30,33 @@ input[type="number"] {
 }
 
 .clock__input--minutes {
-    text-align: end;
+  text-align: end;
 }
 
 .clock__colon {
   font-size: 5rem;
-  color: #d62828;
+  color: #fff;
   font-weight: 700;
+}
+
+.clock__accept {
+  outline: none;
+  margin-top: 20px;
+  border: none;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.875rem;
+  color: #80b918;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #80b918;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clock__accept:hover {
+  background: #80b918;
+  color: #fff;
 }

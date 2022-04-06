@@ -5,7 +5,7 @@ import NotesEditor from "./components/NotesEditor";
 import SessionsList from "./components/SessionsList";
 import "./index.css";
 
-const BASIC_TIME = 0.1 * 60 * 1000;
+const BASIC_TIME = 25 * 60 * 1000;
 
 const App = () => {
   const [isActive, setIsActive] = useState(false);
@@ -57,6 +57,11 @@ const App = () => {
     setIsEditingTime((prev) => !prev);
   };
 
+  const handleTimeChange = (givenTime) => {
+    setTime(givenTime);
+    setIsEditingTime((prev) => !prev);
+  };
+
   return (
     <Fragment>
       <NotesEditor
@@ -73,6 +78,7 @@ const App = () => {
           handleTimeUpdate={handleTimeUpdate}
           handleEndOfSession={handleEndOfSession}
           handleEditingTime={handleEditingTime}
+          handleTimeChange={handleTimeChange}
         />
         <Menu
           isActive={isActive}

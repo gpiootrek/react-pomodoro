@@ -9,6 +9,7 @@ const Clock = ({
   handleTimeUpdate,
   handleEndOfSession,
   handleEditingTime,
+  handleTimeChange,
 }) => {
   const [timer, setTimer] = useState(null);
 
@@ -34,9 +35,8 @@ const Clock = ({
 
   return (
     <div className="clock">
-      {/* TODO switch between span and input (on click) to change given time */}
       {!isActive && isEditingTime ? (
-        <TimeInput />
+        <TimeInput handleTimeChange={handleTimeChange}/>
       ) : (
         <span className="timer" onClick={handleEditingTime}>
           {Math.trunc(time / 1000 / 60)}:
