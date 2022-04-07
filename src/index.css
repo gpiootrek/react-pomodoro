@@ -9,9 +9,10 @@ html {
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 120px 0;
     background: #010a18;
     display: flex;
     justify-content: center;

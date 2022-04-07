@@ -1,0 +1,24 @@
+.notification {
+  min-width: 300px;
+  min-height: 80px;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  border: 2px solid #d90429;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+}
+
+.notification__title {
+  font-size: 1.5rem;
+  padding: 4px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.notification__content {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ddd;
+}

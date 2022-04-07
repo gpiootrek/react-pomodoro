@@ -11,6 +11,8 @@ const App = () => {
   const [isActive, setIsActive] = useState(false);
   const [isEditingTime, setIsEditingTime] = useState(false);
   const [time, setTime] = useState(BASIC_TIME);
+  const [minutes, setMinutes] = useState("25");
+  const [seconds, setSeconds] = useState("00");
   const [sessions, setSessions] = useState([]);
   const [currentNotes, setCurrentNotes] = useState("");
   const [index, setIndex] = useState(0);
@@ -35,6 +37,9 @@ const App = () => {
       {
         index: index,
         notes: currentNotes,
+        minutes: Math.round(minutes),
+        seconds: Math.round(seconds),
+        isExtended: false,
       },
     ]);
 
@@ -59,6 +64,9 @@ const App = () => {
 
   const handleTimeChange = (givenTime) => {
     setTime(givenTime);
+
+    setMinutes(givenTime / 1000 / 60);
+    setSeconds((givenTime / 1000) % 60);
     setIsEditingTime((prev) => !prev);
   };
 
@@ -86,7 +94,9 @@ const App = () => {
           handleRestart={handleRestart}
           handleEditorState={handleEditorState}
         />
-        <SessionsList sessions={sessions} />
+        <SessionsList
+          sessions={sessions}
+        />
       </div>
     </Fragment>
   );
