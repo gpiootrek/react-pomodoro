@@ -35,7 +35,7 @@ const TimeInput = ({ handleTimeChange }) => {
       secondsInputRef.current.value = 59;
       handleInvalidInput("high");
     }
-    if (input < 1) {
+    if ((input < 1 && minutesInputRef.current.value < 1) || input < 0) {
       secondsInputRef.current.value = "01";
       handleInvalidInput("low");
     }
@@ -78,7 +78,7 @@ const TimeInput = ({ handleTimeChange }) => {
         </button>
       </div>
       <Notification
-        isPushed={isInputValid}
+        isPushed={!isInputValid}
         title="Invalid input"
         content={errorContent}
       />

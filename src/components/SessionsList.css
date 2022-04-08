@@ -17,10 +17,6 @@
 .session-list__item {
     margin-top: 8px;
     width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.1));
 }
 
@@ -39,6 +35,10 @@
     background: transparent;
     border: 1px solid #ef233c; 
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .session-details {
